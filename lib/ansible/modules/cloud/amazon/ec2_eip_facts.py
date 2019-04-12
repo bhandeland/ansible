@@ -51,6 +51,18 @@ EXAMPLES = '''
          - i-987654321
   register: my_vms_eips
 
+# List all EIP's for an allocation-id
+- ec2_eip_facts:
+    filters:
+      allocation-id: alloc-12345678
+register: my_eip_facts
+
+# List all EIP's for a Tag with the name of myhost
+- ec2_eip_facts:
+    filters:
+      tag:name: myhost
+register: my_eip_facts
+
 '''
 
 
